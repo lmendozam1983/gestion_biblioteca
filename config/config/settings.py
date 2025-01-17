@@ -133,3 +133,13 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+LOGIN_URL = '/dispositivo/templates/registration/login/'
+LOGIN_REDIRECT_URL = '/'  # Redirige después de iniciar sesión
+
+# settings.py
+TIME_ZONE = 'America/Santiago'
+
+USE_TZ = True  # Si quieres manejar zonas horarias con soporte UTC
+

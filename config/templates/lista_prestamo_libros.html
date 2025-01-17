@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+{% include 'menu.html' %}
+    <div class="p-3">
+        <h2>Lista libros</h2>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Usuario</th>
+                <th scope="col">Libro</th>
+                <th scope="col">Fecha inicio</th>
+                <th scope="col">Fecha fin</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Eliminar</th>
+            </tr>
+            </thead>
+        {%for prestamo in prestamos %}
+            <tbody>
+                    <tr>
+                    <th scope="row">{{prestamo.id}}</th>
+                    <td>{{prestamo.usuario}}</td>
+                    <td>{{prestamo.libro}}</td>
+                    <td>{{prestamo.fecha_inicio}}</td>
+                    <td>{{prestamo.fecha_devolucion}}</td>
+                    <td>{{prestamo.estado}}</td>
+                    <td><a href="/biblioteca/editar_prestamo/{{prestamo.id}}">Editar</a></td>
+                    <td><a href="/biblioteca/eliminar_prestamo/{{prestamo.id}}">Eliminar</a></td>
+                    </tr>
+            </tbody>
+        {%endfor%}
+        </table>
+        <a href="/biblioteca/prestamo_libros/">Nuevo prestamo</a>
+    </div>
+
+{% endblock %}

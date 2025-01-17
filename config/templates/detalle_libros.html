@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+{% include 'menu.html' %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg rounded">
+                <div class="card-body">
+                    <h5 class="card-title text-center mb-4">{{ libro.titulo }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted text-center">{{ libro.autor }}</h6>
+                    <p class="card-text text-center text-muted mb-4">{{ libro.isbn }}</p>
+                    <div class="text-center">
+                        <a href="/biblioteca/prestamos/usuario/{{ libro.id }}" class="btn btn-primary btn-lg">
+                            <i class="bi bi-bookmark-plus"></i> Pedir libro
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
