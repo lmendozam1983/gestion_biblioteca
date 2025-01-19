@@ -21,10 +21,6 @@ class CustomUserCreationForm(UserAdmin):
 admin.site.unregister(User)
 admin.site.register(User, CustomUserCreationForm)
     
-    
-    
-    
-    
 @admin.register(Libro)
 class LibroAdmin(admin.ModelAdmin):
     list_display = ('titulo', 'autor', 'isbn', 'disponible')
